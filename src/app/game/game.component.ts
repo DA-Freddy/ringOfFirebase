@@ -22,7 +22,12 @@ export class GameComponent implements OnInit {
     this.sub = this.route.params.subscribe(params => {
       this.gameId = params['gameId'];
       this.firebaseServ.gameId = this.gameId;
-      this.loadGame();
+      // this.loadGame();
+      this.firebaseServ.subGame();
+    });
+
+    this.firebaseServ.gameTrigger.subscribe(game => {
+      console.log(game);
     });
   }
 
