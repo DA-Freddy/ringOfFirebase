@@ -10,8 +10,7 @@ export class FirebaseService {
   game = {} ;
   unsubGame;
   firestore: Firestore = inject(Firestore)
-  constructor() {
-    
+  constructor() { 
   }
 
   subGame(){
@@ -34,6 +33,7 @@ export class FirebaseService {
     )
     return gameId;
   }
+
   getCurrentGame(){
     let singleDoc = doc(this.getGameRef(), this.gameId);
     return onSnapshot(singleDoc, (element)=>{

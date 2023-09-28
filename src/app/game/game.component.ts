@@ -28,6 +28,12 @@ export class GameComponent implements OnInit {
 
     this.firebaseServ.gameTrigger.subscribe(game => {
       console.log(game);
+      this.game.stack = game.stack;
+      this.game.players = game.players;
+      this.game.playedCards = game.playedCards;
+      this.game.currentPlayer = game.currentPlayer;
+      this.game.pickCardAnimation = game.pickCardAnimation;
+      this.game.currentCard = game.currentCard;
     });
   }
 
